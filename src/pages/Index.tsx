@@ -12,10 +12,35 @@ const Index = () => {
     service: '',
     message: ''
   });
+  const [photos, setPhotos] = useState<File[]>([]);
+  const [photoPreview, setPhotoPreview] = useState<string[]>([]);
+
+  const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || []);
+    if (files.length + photos.length > 5) {
+      alert('Максимум 5 фотографий');
+      return;
+    }
+    
+    setPhotos([...photos, ...files]);
+    
+    files.forEach(file => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPhotoPreview(prev => [...prev, reader.result as string]);
+      };
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const removePhoto = (index: number) => {
+    setPhotos(photos.filter((_, i) => i !== index));
+    setPhotoPreview(photoPreview.filter((_, i) => i !== index));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log('Form submitted:', formData, 'Photos:', photos);
   };
 
   return (
@@ -538,6 +563,55 @@ const Index = () => {
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
                       className="border-border focus:border-primary resize-none"
                     />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Фотографии помещения (необязательно)
+                    </label>
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-3">
+                        <label className="flex-1 cursor-pointer">
+                          <div className="border-2 border-dashed border-border hover:border-primary rounded-lg p-6 text-center transition-colors">
+                            <Icon name="Upload" className="text-muted-foreground mx-auto mb-2" size={32} />
+                            <p className="text-sm text-muted-foreground mb-1">
+                              Загрузите фото помещения
+                            </p>
+                            <p className="text-xs text-muted-foreground">
+                              До 5 фото, максимум 10 МБ каждое
+                            </p>
+                          </div>
+                          <input
+                            type="file"
+                            accept="image/*"
+                            multiple
+                            onChange={handlePhotoUpload}
+                            className="hidden"
+                          />
+                        </label>
+                      </div>
+                      
+                      {photoPreview.length > 0 && (
+                        <div className="grid grid-cols-3 gap-3">
+                          {photoPreview.map((preview, index) => (
+                            <div key={index} className="relative group">
+                              <img
+                                src={preview}
+                                alt={`Фото ${index + 1}`}
+                                className="w-full h-24 object-cover rounded-lg border border-border"
+                              />
+                              <button
+                                type="button"
+                                onClick={() => removePhoto(index)}
+                                className="absolute -top-2 -right-2 bg-destructive text-destructive-foreground rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                              >
+                                <Icon name="X" size={16} />
+                              </button>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                   
                   <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
