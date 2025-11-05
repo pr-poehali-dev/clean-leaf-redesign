@@ -74,34 +74,147 @@ const Index = () => {
 
       <section id="about" className="py-20 bg-muted/30">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h3 className="text-4xl font-serif font-bold text-primary mb-6">Мы здесь, чтобы помочь</h3>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Потеря близкого человека — одно из самых тяжелых испытаний в жизни. Мы берем на себя всю сложную работу 
-              по приведению помещения в порядок, чтобы вы могли сосредоточиться на важном.
-            </p>
-            <div className="grid md:grid-cols-3 gap-8 mt-12">
-              <div className="text-center">
-                <div className="inline-flex p-4 bg-primary/10 rounded-full mb-4">
-                  <Icon name="Heart" className="text-primary" size={32} />
-                </div>
-                <h4 className="text-xl font-serif font-semibold text-primary mb-2">Деликатность</h4>
-                <p className="text-muted-foreground">Работаем с уважением к вашим чувствам и памяти близких</p>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12 animate-fade-in">
+              <h3 className="text-4xl font-serif font-bold text-primary mb-6">Мы здесь, чтобы помочь</h3>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+                Потеря близкого человека — одно из самых тяжелых испытаний в жизни. Мы берем на себя всю сложную работу 
+                по приведению помещения в порядок, чтобы вы могли сосредоточиться на важном.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+              <div className="animate-fade-in">
+                <Card className="border-primary/20 overflow-hidden">
+                  <CardContent className="p-0">
+                    <div className="bg-primary/5 p-8">
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="p-3 bg-primary rounded-lg">
+                          <Icon name="Users" className="text-primary-foreground" size={32} />
+                        </div>
+                        <div>
+                          <h4 className="text-2xl font-serif font-bold text-primary">Clean Leaf</h4>
+                          <p className="text-muted-foreground">С 2018 года</p>
+                        </div>
+                      </div>
+                      <div className="space-y-4 text-muted-foreground leading-relaxed">
+                        <p>
+                          <strong className="text-primary">Clean Leaf</strong> — специализированная клининговая компания, 
+                          которая работает в самой деликатной сфере: уборка помещений после смерти людей.
+                        </p>
+                        <p>
+                          Мы не просто клинеры. Мы — команда профессионалов, которые понимают, через что вы проходите. 
+                          За 6 лет работы мы помогли более чем <strong className="text-primary">500 семьям</strong> справиться 
+                          с этой сложной ситуацией.
+                        </p>
+                        <p>
+                          Наша миссия — взять на себя всю тяжелую работу, чтобы вы могли сохранить светлую память 
+                          о близком человеке, не сталкиваясь с тяжелыми последствиями.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-3 divide-x divide-border">
+                      <div className="p-6 text-center">
+                        <div className="text-3xl font-serif font-bold text-primary mb-1">500+</div>
+                        <div className="text-sm text-muted-foreground">Выполненных<br/>заказов</div>
+                      </div>
+                      <div className="p-6 text-center">
+                        <div className="text-3xl font-serif font-bold text-primary mb-1">24/7</div>
+                        <div className="text-sm text-muted-foreground">Работаем<br/>круглосуточно</div>
+                      </div>
+                      <div className="p-6 text-center">
+                        <div className="text-3xl font-serif font-bold text-primary mb-1">6 лет</div>
+                        <div className="text-sm text-muted-foreground">На рынке<br/>услуг</div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
-              <div className="text-center">
-                <div className="inline-flex p-4 bg-primary/10 rounded-full mb-4">
-                  <Icon name="Shield" className="text-primary" size={32} />
-                </div>
-                <h4 className="text-xl font-serif font-semibold text-primary mb-2">Конфиденциальность</h4>
-                <p className="text-muted-foreground">Гарантируем полную конфиденциальность и защиту данных</p>
+
+              <div className="space-y-6 animate-fade-in" style={{animationDelay: '0.2s'}}>
+                <Card className="border-border hover:border-primary/50 transition-colors">
+                  <CardContent className="p-6 flex gap-4 items-start">
+                    <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
+                      <Icon name="Briefcase" className="text-primary" size={28} />
+                    </div>
+                    <div>
+                      <h5 className="text-lg font-serif font-semibold text-primary mb-2">Профессиональная команда</h5>
+                      <p className="text-muted-foreground leading-relaxed">
+                        12 сертифицированных специалистов с медицинским образованием и допусками к работе 
+                        с биологическими материалами. Регулярное обучение и повышение квалификации.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-border hover:border-primary/50 transition-colors">
+                  <CardContent className="p-6 flex gap-4 items-start">
+                    <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
+                      <Icon name="Wrench" className="text-primary" size={28} />
+                    </div>
+                    <div>
+                      <h5 className="text-lg font-serif font-semibold text-primary mb-2">Профессиональное оборудование</h5>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Используем озонаторы, генераторы холодного тумана, HEPA-фильтры и специализированную 
+                        химию класса Professional. Собственный автопарк для вывоза отходов.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-border hover:border-primary/50 transition-colors">
+                  <CardContent className="p-6 flex gap-4 items-start">
+                    <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
+                      <Icon name="HeartHandshake" className="text-primary" size={28} />
+                    </div>
+                    <div>
+                      <h5 className="text-lg font-serif font-semibold text-primary mb-2">Человечный подход</h5>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Мы знаем, как тяжело в такие моменты. Работаем тактично, без лишних вопросов. 
+                        Помогаем с документами и при необходимости рекомендуем психологов.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
-              <div className="text-center">
-                <div className="inline-flex p-4 bg-primary/10 rounded-full mb-4">
-                  <Icon name="Clock" className="text-primary" size={32} />
-                </div>
-                <h4 className="text-xl font-serif font-semibold text-primary mb-2">Круглосуточно</h4>
-                <p className="text-muted-foreground">Готовы приехать в любое удобное для вас время</p>
-              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="text-center border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in" style={{animationDelay: '0.3s'}}>
+                <CardContent className="p-8">
+                  <div className="inline-flex p-4 bg-primary/10 rounded-full mb-4">
+                    <Icon name="Heart" className="text-primary" size={36} />
+                  </div>
+                  <h4 className="text-xl font-serif font-semibold text-primary mb-3">Деликатность</h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Работаем с уважением к вашим чувствам и памяти близких. Приезжаем без опознавательных знаков.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in" style={{animationDelay: '0.4s'}}>
+                <CardContent className="p-8">
+                  <div className="inline-flex p-4 bg-primary/10 rounded-full mb-4">
+                    <Icon name="Shield" className="text-primary" size={36} />
+                  </div>
+                  <h4 className="text-xl font-serif font-semibold text-primary mb-3">Конфиденциальность</h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    NDA с каждым клиентом. Никто не узнает о нашем визите. Полная защита ваших данных.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in" style={{animationDelay: '0.5s'}}>
+                <CardContent className="p-8">
+                  <div className="inline-flex p-4 bg-primary/10 rounded-full mb-4">
+                    <Icon name="Clock" className="text-primary" size={36} />
+                  </div>
+                  <h4 className="text-xl font-serif font-semibold text-primary mb-3">Срочный выезд</h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Готовы приехать в любое время суток. Выезд в течение 2 часов. Работаем без выходных.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
