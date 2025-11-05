@@ -30,6 +30,7 @@ const Index = () => {
             <a href="#about" className="text-foreground hover:text-accent transition-colors">О нас</a>
             <a href="#services" className="text-foreground hover:text-accent transition-colors">Услуги</a>
             <a href="#pricing" className="text-foreground hover:text-accent transition-colors">Прайс</a>
+            <a href="#faq" className="text-foreground hover:text-accent transition-colors">Вопросы</a>
             <a href="#contact" className="text-foreground hover:text-accent transition-colors">Контакты</a>
           </nav>
           <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
@@ -239,6 +240,133 @@ const Index = () => {
                     </ul>
                   </div>
                 </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16 animate-fade-in">
+            <h3 className="text-4xl font-serif font-bold text-primary mb-4">Частые вопросы</h3>
+            <p className="text-lg text-muted-foreground">Ответы на самые распространенные вопросы</p>
+          </div>
+          
+          <div className="max-w-3xl mx-auto space-y-4">
+            {[
+              {
+                question: 'Как быстро вы можете приехать?',
+                answer: 'Мы работаем круглосуточно и готовы выехать в течение 2 часов после вашего звонка. В экстренных случаях возможен более быстрый выезд.'
+              },
+              {
+                question: 'Нужно ли мне присутствовать при уборке?',
+                answer: 'Ваше присутствие не обязательно. Мы можем выполнить все работы самостоятельно при наличии доступа к помещению. Многие наши клиенты предпочитают не присутствовать.'
+              },
+              {
+                question: 'Что делать с вещами умершего?',
+                answer: 'Мы можем помочь с сортировкой, упаковкой и вывозом вещей. Ценные предметы передаются вам или указанным лицам. Остальное утилизируется с соблюдением всех норм.'
+              },
+              {
+                question: 'Гарантируете ли вы полное устранение запахов?',
+                answer: 'Да, мы используем профессиональное озонирование и специализированные средства, которые полностью устраняют любые запахи на молекулярном уровне.'
+              },
+              {
+                question: 'Какие документы вы предоставляете?',
+                answer: 'После работ мы предоставляем акт выполненных работ, документы об утилизации отходов и санитарно-эпидемиологическое заключение о безопасности помещения.'
+              },
+              {
+                question: 'Можно ли оплатить услуги в рассрочку?',
+                answer: 'Да, мы понимаем сложность ситуации и предоставляем возможность рассрочки платежа. Условия обсуждаются индивидуально.'
+              },
+              {
+                question: 'Работаете ли вы за пределами Москвы?',
+                answer: 'Да, мы выезжаем по всей Московской области. Для других регионов возможность выезда обсуждается индивидуально.'
+              },
+              {
+                question: 'Как обеспечивается конфиденциальность?',
+                answer: 'Все наши сотрудники подписывают соглашение о неразглашении. Мы не используем униформу с логотипами при работе, работаем в удобное для вас время.'
+              }
+            ].map((item, index) => (
+              <Card key={index} className="border-border hover:shadow-lg transition-all duration-300 animate-fade-in" style={{animationDelay: `${index * 0.05}s`}}>
+                <CardContent className="p-6">
+                  <h4 className="text-lg font-serif font-semibold text-primary mb-3 flex items-start gap-3">
+                    <Icon name="HelpCircle" className="text-accent flex-shrink-0 mt-1" size={20} />
+                    {item.question}
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed pl-8">{item.answer}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16 animate-fade-in">
+            <h3 className="text-4xl font-serif font-bold text-primary mb-4">Наши гарантии</h3>
+            <p className="text-lg text-muted-foreground">Мы работаем официально и несем полную ответственность</p>
+          </div>
+          
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                {
+                  icon: 'FileCheck',
+                  title: 'Официальная регистрация',
+                  description: 'ООО "Clean Leaf" работает с 2018 года. ИНН, ОГРН, лицензии — все документы в порядке и предоставляются по запросу.'
+                },
+                {
+                  icon: 'Award',
+                  title: 'Сертификация специалистов',
+                  description: 'Все наши сотрудники прошли специальное обучение и имеют сертификаты по работе с биологическими отходами и дезинфекции.'
+                },
+                {
+                  icon: 'ShieldCheck',
+                  title: 'Страхование ответственности',
+                  description: 'Наша деятельность застрахована на сумму до 5 млн рублей. Любые повреждения имущества компенсируются страховой компанией.'
+                },
+                {
+                  icon: 'ScrollText',
+                  title: 'Договор и гарантии',
+                  description: 'Мы заключаем официальный договор с подробным описанием работ. Гарантия на санитарную обработку — 12 месяцев.'
+                },
+                {
+                  icon: 'Recycle',
+                  title: 'Лицензия на утилизацию',
+                  description: 'Имеем все необходимые разрешения на сбор, транспортировку и утилизацию отходов различных классов опасности.'
+                },
+                {
+                  icon: 'UserCheck',
+                  title: 'Проверенный персонал',
+                  description: 'Все сотрудники проходят проверку службы безопасности, имеют медицинские книжки и допуски к работе.'
+                }
+              ].map((item, index) => (
+                <Card key={index} className="border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
+                  <CardContent className="p-6">
+                    <div className="flex gap-4 items-start">
+                      <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
+                        <Icon name={item.icon as any} className="text-primary" size={28} />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-serif font-semibold text-primary mb-2">{item.title}</h4>
+                        <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            
+            <Card className="mt-12 border-accent/30 bg-accent/5 animate-fade-in" style={{animationDelay: '0.6s'}}>
+              <CardContent className="p-8 text-center">
+                <Icon name="BadgeCheck" className="text-accent mx-auto mb-4" size={48} />
+                <h4 className="text-2xl font-serif font-bold text-primary mb-3">Работаем по закону</h4>
+                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                  Наша деятельность полностью соответствует СанПиН 2.1.3684-21, требованиям Роспотребнадзора 
+                  и законодательству РФ об обращении с отходами. Все процедуры выполняются согласно установленным стандартам.
+                </p>
               </CardContent>
             </Card>
           </div>
