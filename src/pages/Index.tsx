@@ -27,12 +27,14 @@ const Index = () => {
             <h1 className="text-2xl font-serif font-bold text-primary">Clean Leaf</h1>
           </div>
           <nav className="hidden md:flex gap-8">
+            <a href="#about" className="text-foreground hover:text-accent transition-colors">О нас</a>
             <a href="#services" className="text-foreground hover:text-accent transition-colors">Услуги</a>
             <a href="#pricing" className="text-foreground hover:text-accent transition-colors">Прайс</a>
             <a href="#contact" className="text-foreground hover:text-accent transition-colors">Контакты</a>
           </nav>
           <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-            Заказать уборку
+            <Icon name="Phone" size={18} className="mr-2" />
+            Позвонить
           </Button>
         </div>
       </header>
@@ -42,26 +44,26 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <h2 className="text-5xl md:text-6xl font-serif font-bold text-primary mb-6 leading-tight">
-                Премиальная<br />чистота для<br />вашего дома
+                Деликатная<br />уборка в<br />сложных ситуациях
               </h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Clean Leaf предоставляет профессиональные клининговые услуги премиум-класса. 
-                Мы заботимся о каждой детали, создавая идеальное пространство для вашей жизни.
+                Мы понимаем, насколько тяжело переживать утрату. Clean Leaf предоставляет специализированные услуги 
+                по уборке помещений после смерти близких. Работаем тактично, конфиденциально и профессионально.
               </p>
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                   <Icon name="Phone" size={20} className="mr-2" />
-                  Связаться с нами
+                  +7 (999) 123-45-67
                 </Button>
                 <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5">
-                  Узнать больше
+                  Консультация
                 </Button>
               </div>
             </div>
             <div className="animate-scale-in">
               <img 
-                src="https://cdn.poehali.dev/projects/571fd87a-c57e-4eb1-b268-9f13242a2d11/files/0c1c53d2-c51c-4bee-b85e-ebe610f32ce0.jpg" 
-                alt="Премиальный интерьер" 
+                src="https://cdn.poehali.dev/projects/571fd87a-c57e-4eb1-b268-9f13242a2d11/files/b5cbe530-0048-44ff-8cb2-81230c3cccb3.jpg" 
+                alt="Чистое помещение" 
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />
             </div>
@@ -69,46 +71,90 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-20 bg-muted/30">
+      <section id="about" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center animate-fade-in">
+            <h3 className="text-4xl font-serif font-bold text-primary mb-6">Мы здесь, чтобы помочь</h3>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              Потеря близкого человека — одно из самых тяжелых испытаний в жизни. Мы берем на себя всю сложную работу 
+              по приведению помещения в порядок, чтобы вы могли сосредоточиться на важном.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8 mt-12">
+              <div className="text-center">
+                <div className="inline-flex p-4 bg-primary/10 rounded-full mb-4">
+                  <Icon name="Heart" className="text-primary" size={32} />
+                </div>
+                <h4 className="text-xl font-serif font-semibold text-primary mb-2">Деликатность</h4>
+                <p className="text-muted-foreground">Работаем с уважением к вашим чувствам и памяти близких</p>
+              </div>
+              <div className="text-center">
+                <div className="inline-flex p-4 bg-primary/10 rounded-full mb-4">
+                  <Icon name="Shield" className="text-primary" size={32} />
+                </div>
+                <h4 className="text-xl font-serif font-semibold text-primary mb-2">Конфиденциальность</h4>
+                <p className="text-muted-foreground">Гарантируем полную конфиденциальность и защиту данных</p>
+              </div>
+              <div className="text-center">
+                <div className="inline-flex p-4 bg-primary/10 rounded-full mb-4">
+                  <Icon name="Clock" className="text-primary" size={32} />
+                </div>
+                <h4 className="text-xl font-serif font-semibold text-primary mb-2">Круглосуточно</h4>
+                <p className="text-muted-foreground">Готовы приехать в любое удобное для вас время</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16 animate-fade-in">
-            <h3 className="text-4xl font-serif font-bold text-primary mb-4">Наши услуги</h3>
-            <p className="text-lg text-muted-foreground">Комплексный подход к чистоте вашего пространства</p>
+            <h3 className="text-4xl font-serif font-bold text-primary mb-4">Что входит в услугу</h3>
+            <p className="text-lg text-muted-foreground">Полный комплекс работ по приведению помещения в порядок</p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="max-w-4xl mx-auto space-y-6">
             {[
               {
+                icon: 'Trash2',
+                title: 'Вывоз и утилизация',
+                description: 'Профессиональный вывоз вещей, мебели и биологических отходов с соблюдением всех норм'
+              },
+              {
+                icon: 'Droplets',
+                title: 'Санитарная обработка',
+                description: 'Глубокая дезинфекция помещения с использованием профессиональных антисептиков'
+              },
+              {
+                icon: 'Wind',
+                title: 'Устранение запахов',
+                description: 'Применение озонирования и специализированных средств для полного удаления запахов'
+              },
+              {
                 icon: 'Home',
-                title: 'Уборка квартир',
-                description: 'Поддерживающая и генеральная уборка жилых помещений с использованием премиальных средств',
-                image: 'https://cdn.poehali.dev/projects/571fd87a-c57e-4eb1-b268-9f13242a2d11/files/49e6c107-895e-457e-94e5-ab88951b009c.jpg'
+                title: 'Генеральная уборка',
+                description: 'Комплексная уборка всех поверхностей, стен, полов, окон и труднодоступных мест'
               },
               {
-                icon: 'Building2',
-                title: 'Клининг офисов',
-                description: 'Профессиональная уборка бизнес-пространств для создания комфортной рабочей атмосферы',
-                image: 'https://cdn.poehali.dev/projects/571fd87a-c57e-4eb1-b268-9f13242a2d11/files/020afeb6-0843-488d-a250-b68a7eafcb11.jpg'
+                icon: 'FileText',
+                title: 'Помощь с документами',
+                description: 'Консультации по оформлению необходимых документов и взаимодействию с организациями'
               },
               {
-                icon: 'Sparkles',
-                title: 'Химчистка мебели',
-                description: 'Деликатная чистка мягкой мебели и ковровых покрытий с сохранением качества материалов',
-                image: 'https://cdn.poehali.dev/projects/571fd87a-c57e-4eb1-b268-9f13242a2d11/files/0c1c53d2-c51c-4bee-b85e-ebe610f32ce0.jpg'
+                icon: 'Users',
+                title: 'Психологическая поддержка',
+                description: 'Работаем с пониманием и сочувствием, при необходимости помогаем с контактами специалистов'
               }
             ].map((service, index) => (
-              <Card key={index} className="overflow-hidden border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
-                <div className="h-48 overflow-hidden">
-                  <img src={service.image} alt={service.title} className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <Icon name={service.icon as any} className="text-primary" size={24} />
-                    </div>
-                    <h4 className="text-xl font-serif font-semibold text-primary">{service.title}</h4>
+              <Card key={index} className="border-border hover:shadow-lg transition-all duration-300 animate-fade-in" style={{animationDelay: `${index * 0.05}s`}}>
+                <CardContent className="p-6 flex gap-4 items-start">
+                  <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
+                    <Icon name={service.icon as any} className="text-primary" size={28} />
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                  <div>
+                    <h4 className="text-xl font-serif font-semibold text-primary mb-2">{service.title}</h4>
+                    <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -116,24 +162,23 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="pricing" className="py-20">
+      <section id="pricing" className="py-20 bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16 animate-fade-in">
-            <h3 className="text-4xl font-serif font-bold text-primary mb-4">Прозрачные цены</h3>
-            <p className="text-lg text-muted-foreground">Честная стоимость без скрытых платежей</p>
+            <h3 className="text-4xl font-serif font-bold text-primary mb-4">Стоимость услуг</h3>
+            <p className="text-lg text-muted-foreground">Индивидуальный расчет в зависимости от сложности работы</p>
           </div>
           
           <div className="max-w-3xl mx-auto space-y-4">
             {[
-              { service: 'Поддерживающая уборка', area: 'до 50 м²', price: '3 500', unit: '₽' },
-              { service: 'Поддерживающая уборка', area: '50-80 м²', price: '5 000', unit: '₽' },
-              { service: 'Поддерживающая уборка', area: '80-120 м²', price: '7 500', unit: '₽' },
-              { service: 'Генеральная уборка', area: 'до 50 м²', price: '6 000', unit: '₽' },
-              { service: 'Генеральная уборка', area: '50-80 м²', price: '9 000', unit: '₽' },
-              { service: 'Генеральная уборка', area: '80-120 м²', price: '13 500', unit: '₽' },
-              { service: 'Химчистка дивана', area: '2-3 места', price: '4 500', unit: '₽' },
-              { service: 'Химчистка ковра', area: 'за м²', price: '350', unit: '₽' },
-              { service: 'Мытьё окон', area: 'за окно', price: '500', unit: '₽' },
+              { service: 'Выезд и осмотр', area: 'бесплатно', price: '0', unit: '₽' },
+              { service: 'Санитарная обработка', area: 'до 50 м²', price: 'от 15 000', unit: '₽' },
+              { service: 'Санитарная обработка', area: '50-80 м²', price: 'от 25 000', unit: '₽' },
+              { service: 'Санитарная обработка', area: '80-120 м²', price: 'от 35 000', unit: '₽' },
+              { service: 'Вывоз и утилизация', area: 'за м³', price: 'от 2 500', unit: '₽' },
+              { service: 'Озонирование', area: 'за помещение', price: 'от 5 000', unit: '₽' },
+              { service: 'Дезинфекция транспорта', area: 'легковой', price: 'от 8 000', unit: '₽' },
+              { service: 'Генеральная уборка', area: 'после обработки', price: 'от 10 000', unit: '₽' },
             ].map((item, index) => (
               <Card key={index} className="border-border hover:shadow-lg transition-all duration-300 hover:border-accent animate-fade-in" style={{animationDelay: `${index * 0.05}s`}}>
                 <CardContent className="p-6 flex justify-between items-center">
@@ -143,7 +188,7 @@ const Index = () => {
                   </div>
                   <div className="text-right">
                     <div className="flex items-baseline gap-1">
-                      <span className="text-3xl font-serif font-bold text-accent">{item.price}</span>
+                      <span className="text-2xl font-serif font-bold text-accent">{item.price}</span>
                       <span className="text-lg text-muted-foreground">{item.unit}</span>
                     </div>
                   </div>
@@ -153,7 +198,49 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-12">
-            <p className="text-sm text-muted-foreground italic">* Точная стоимость рассчитывается индивидуально после осмотра объекта</p>
+            <p className="text-sm text-muted-foreground italic max-w-2xl mx-auto">
+              Окончательная стоимость определяется после бесплатного выезда специалиста и оценки объема работ. 
+              Возможна оплата в рассрочку.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <Card className="border-primary/20 bg-primary/5">
+              <CardContent className="p-8">
+                <div className="flex gap-4 items-start">
+                  <Icon name="Info" className="text-primary flex-shrink-0" size={28} />
+                  <div>
+                    <h4 className="text-xl font-serif font-semibold text-primary mb-3">Важная информация</h4>
+                    <ul className="space-y-2 text-muted-foreground leading-relaxed">
+                      <li className="flex gap-2">
+                        <span className="text-primary">•</span>
+                        <span>Все работы выполняются сертифицированными специалистами в защитной экипировке</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-primary">•</span>
+                        <span>Используем профессиональное оборудование и сертифицированные средства</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-primary">•</span>
+                        <span>Предоставляем полный пакет документов об утилизации</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-primary">•</span>
+                        <span>Работаем 24/7, выезжаем в течение 2 часов после звонка</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-primary">•</span>
+                        <span>Гарантируем абсолютную конфиденциальность</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -162,8 +249,8 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12 animate-fade-in">
-              <h3 className="text-4xl font-serif font-bold text-primary mb-4">Заказать уборку</h3>
-              <p className="text-lg text-muted-foreground">Оставьте заявку, и мы свяжемся с вами в ближайшее время</p>
+              <h3 className="text-4xl font-serif font-bold text-primary mb-4">Свяжитесь с нами</h3>
+              <p className="text-lg text-muted-foreground">Мы готовы ответить на все ваши вопросы и помочь в трудную минуту</p>
             </div>
             
             <Card className="border-border shadow-xl animate-scale-in">
@@ -180,20 +267,21 @@ const Index = () => {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Телефон</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">Телефон *</label>
                     <Input 
                       type="tel" 
                       placeholder="+7 (999) 123-45-67" 
                       value={formData.phone}
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
                       className="border-border focus:border-primary"
+                      required
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Услуга</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">Адрес объекта</label>
                     <Input 
-                      placeholder="Генеральная уборка, 70 м²" 
+                      placeholder="Москва, ул. Примерная, д. 1" 
                       value={formData.service}
                       onChange={(e) => setFormData({...formData, service: e.target.value})}
                       className="border-border focus:border-primary"
@@ -201,9 +289,9 @@ const Index = () => {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Комментарий</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">Описание ситуации</label>
                     <Textarea 
-                      placeholder="Расскажите подробнее о ваших пожеланиях..." 
+                      placeholder="Опишите ситуацию, чтобы мы могли подготовиться..." 
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
@@ -215,9 +303,21 @@ const Index = () => {
                     <Icon name="Send" size={20} className="mr-2" />
                     Отправить заявку
                   </Button>
+                  
+                  <p className="text-xs text-muted-foreground text-center">
+                    Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                  </p>
                 </form>
               </CardContent>
             </Card>
+            
+            <div className="mt-8 text-center">
+              <p className="text-muted-foreground mb-4">Или позвоните нам прямо сейчас:</p>
+              <a href="tel:+79991234567" className="text-3xl font-serif font-bold text-primary hover:text-accent transition-colors">
+                +7 (999) 123-45-67
+              </a>
+              <p className="text-sm text-muted-foreground mt-2">Круглосуточно, без выходных</p>
+            </div>
           </div>
         </div>
       </section>
@@ -230,7 +330,7 @@ const Index = () => {
                 <Icon name="Leaf" size={28} />
                 <h4 className="text-xl font-serif font-bold">Clean Leaf</h4>
               </div>
-              <p className="text-primary-foreground/80">Премиальные клининговые услуги для вашего комфорта</p>
+              <p className="text-primary-foreground/80">Деликатные клининговые услуги в сложных жизненных ситуациях</p>
             </div>
             
             <div>
@@ -246,19 +346,20 @@ const Index = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <Icon name="MapPin" size={18} />
-                  <span>Москва</span>
+                  <span>Москва и область</span>
                 </div>
               </div>
             </div>
             
             <div>
               <h5 className="font-semibold mb-4">Режим работы</h5>
-              <p className="text-primary-foreground/80">Ежедневно с 8:00 до 22:00</p>
+              <p className="text-primary-foreground/80 mb-4">Круглосуточно, 24/7</p>
+              <p className="text-sm text-primary-foreground/60">Выезд в течение 2 часов</p>
             </div>
           </div>
           
           <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-primary-foreground/60 text-sm">
-            <p>© 2024 Clean Leaf. Все права защищены.</p>
+            <p>© 2024 Clean Leaf. Конфиденциальность гарантирована.</p>
           </div>
         </div>
       </footer>
